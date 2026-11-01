@@ -16,3 +16,8 @@ const city=document.createElement('section');city.className='page';city.id='page
 
 const manorScene=document.createElement('div');manorScene.className='reference-manor';manorScene.innerHTML='';document.querySelector('#page-manor .manor-hero').before(manorScene);
 
+// Building labels belong to their painted signs. Invisible hit areas retain accessible names.
+document.querySelector('.city-map').innerHTML=`<button class="city-hit hit-arena" data-cityto="expedition" aria-label="竞技大厅"></button><button class="city-hit hit-estate" data-cityto="manor" aria-label="庄园"></button><button class="city-hit hit-family" data-cityto="family" aria-label="家族"></button><button class="city-hit hit-shop" data-cityto="market" aria-label="商城"></button><button class="city-hit hit-explore" data-cityto="expedition" aria-label="探索"></button><div class="city-dock">${[['heroes','角色'],['bag','背包'],['tasks','任务'],['barracks','战配'],['friends','好友'],['market','商城']].map(([id,name],i)=>`<button ${['bag','tasks','friends'].includes(id)?'data-homemenu':'data-cityto'}="${id}" aria-label="${name}"><i style="--menu-index:${i}"></i><b>${name}</b></button>`).join('')}</div>`;
+const minimap=document.createElement('div');minimap.className='battle-minimap';minimap.setAttribute('aria-label','战场小地图');document.querySelector('.arena-surface').append(minimap);
+const count=document.createElement('span');count.id='fieldCount';count.title='我方在场佣兵数量';document.querySelector('.resource-strip>div').append(count);
+
