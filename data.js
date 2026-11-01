@@ -1,14 +1,14 @@
 export const TROOPS=[
  {id:'sword',name:'刀兵',role:'近战 · 主力',kind:'melee',cost:18,hp:125,damage:19,range:30,speed:35,interval:1.05,cooldown:1.7,skill:'利刃',desc:'向前挥斩。克制远程与机械，需要法术支援。',color:'#8fb7c8'},
- {id:'shield',name:'盾兵',role:'近战 · 坦克',kind:'melee',cost:28,hp:310,damage:21,range:32,speed:25,interval:2,cooldown:3.4,skill:'盾击',desc:'持盾蓄力，承受前线伤害。近战核心护卫。',color:'#8cacc1'},
+ {id:'shield',name:'盾兵',role:'近战 · 坦克',kind:'melee',cost:28,hp:310,damage:21,range:32,speed:25,interval:2,cooldown:3.4,skill:'盾击',desc:'持盾蓄力，盾击短暂眩晕目标，为后排争取时间。',color:'#8cacc1'},
  {id:'ice',name:'法师',role:'法系 · 群攻',kind:'magic',cost:34,hp:78,damage:24,range:155,speed:29,interval:2,cooldown:4,skill:'冰霜法阵',desc:'在目标脚下召唤冰阵，攻击范围内敌军并减速。',color:'#83cedc'},
  {id:'archer',name:'弓箭手',role:'远程 · 点杀',kind:'ranged',cost:24,hp:82,damage:24,range:180,speed:32,interval:1.4,cooldown:2.6,skill:'穿林箭',desc:'搭箭、拉弦、释放。优先威胁脆弱的法系部队。',color:'#a8be82'},
  {id:'cannon',name:'攻城车',role:'机械 · 攻城',kind:'machine',cost:48,hp:165,damage:38,range:195,speed:21,interval:3,cooldown:6,skill:'投弹轰击',desc:'后置投臂装填石弹，抛射命中后造成群伤；对城堡造成额外伤害。',color:'#c8b082'},
- {id:'priest',name:'牧师',role:'法系 · 治疗',kind:'support',cost:32,hp:90,damage:24,range:155,speed:30,interval:2.1,cooldown:4,skill:'金色祈愿',desc:'举杖为受伤友军治疗，目标脚下绽放金色法阵。',color:'#e1c989'},
- {id:'witch',name:'巫师',role:'法系 · 控制',kind:'magic',cost:37,hp:83,damage:14,range:150,speed:28,interval:2.3,cooldown:4.5,skill:'恐惧禁锢',desc:'以诅咒短暂禁锢敌人，为己方争取出兵时间。',color:'#b09bcb'},
+ {id:'priest',name:'牧师',role:'法系 · 治疗',kind:'support',cost:15,hp:72,damage:24,range:155,speed:30,interval:2.1,cooldown:4,skill:'金色祈愿',desc:'举杖为受伤友军治疗，目标脚下绽放金色法阵。',color:'#e1c989'},
+ {id:'witch',name:'巫师',role:'法系 · 控制',kind:'magic',cost:37,hp:83,damage:14,range:150,speed:28,interval:2.3,cooldown:4.5,skill:'恐惧禁锢',desc:'攻击目标周围敌军，概率使范围内敌军恐惧，暂时无法移动和攻击。',color:'#b09bcb'},
  {id:'breaker',name:'破甲师',role:'法系 · 破防',kind:'magic',cost:39,hp:86,damage:29,range:145,speed:28,interval:2.2,cooldown:4.5,skill:'灼热破甲',desc:'火焰命中削弱护甲，让集火更有效。',color:'#de9a74'},
- {id:'beast',name:'炎兽',role:'近战 · 自爆',kind:'melee',cost:38,hp:180,damage:20,range:32,speed:39,interval:1.2,cooldown:4,skill:'余烬爆裂',desc:'冲入敌阵近战，死亡时对周围敌军造成爆炸伤害。',color:'#e4aa63'},
- {id:'banner',name:'旗手',role:'辅助 · 增益',kind:'support',cost:42,hp:95,damage:0,range:180,speed:29,interval:2,cooldown:5,skill:'战旗领域',desc:'附近友军获得攻击与生命上限加成；旗手自身脆弱。',color:'#86b9c0'}
+ {id:'beast',name:'炎兽',role:'近战 · 自爆',kind:'melee',cost:38,hp:180,damage:20,range:32,speed:39,interval:1.2,cooldown:4,skill:'余烬爆裂',desc:'冲入敌阵近战，死亡时按自身最大生命的一定比例造成范围爆炸伤害。',color:'#e4aa63'},
+ {id:'banner',name:'旗手',role:'辅助 · 增益',kind:'support',cost:42,hp:95,damage:0,range:180,speed:29,interval:2,cooldown:5,skill:'战旗领域',desc:'在场时为全体友军和玩家提供攻击与生命上限加成；旗手自身脆弱。',color:'#86b9c0'}
 ];
 export const SPELLS=[
  {id:'heal',name:'治愈术',mark:'✦',mana:24,cd:12,desc:'治疗点击位置附近的一名友军。',target:'ally'},
