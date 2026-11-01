@@ -1,7 +1,7 @@
-import './classic.js?v=20261101e';
-import {TROOPS,HEROES,SPELLS,STAGES,SOURCES} from './data.js?v=20261101e';
-import {Battle} from './engine.js?v=20261101e';
-import {Renderer} from './render.js?v=20261101e';
+import './classic.js?v=stock-20261101-2';
+import {TROOPS,HEROES,SPELLS,STAGES,SOURCES} from './data.js?v=stock-20261101-2';
+import {Battle} from './engine.js?v=stock-20261101-2';
+import {Renderer} from './render.js?v=stock-20261101-2';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const key='zzzz-reborn-save-v1';
 const day=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -94,6 +94,7 @@ function renderShop(){$('#shopGrid').innerHTML=`<article class="shop-card"><span
 function renderPanels(){renderWallet();renderDaily();if(page==='barracks')renderBarracks();if(page==='heroes')renderHeroes();if(page==='manor')renderManor();if(page==='market')renderShop();}
 function frame(now){const dt=Math.min(.1,(now-frameTime)/1000||0);frameTime=now;if(page==='expedition'){if(battle.status==='running'){const scaled=dt*battle.speed;for(let left=scaled;left>0;left-=.025)battle.update(Math.min(.025,left));}renderer.draw(battle);}if(now-uiTime>100){updateHUD();uiTime=now}requestAnimationFrame(frame)}
 freshBattle();renderPanels();const hash=location.hash.slice(1);if(['city','barracks','heroes','manor','market','family'].includes(hash))navigate(hash);else if(!hash)navigate('city');requestAnimationFrame(frame);setInterval(()=>{const completed=tickBuildings();if(page==='manor'){if(completed)renderManor();else{refreshManorStatus();const count=$('#estateCollect b');if(count)count.textContent='+'+production();}}renderDaily()},1000);if(!storageOK)toast('浏览器存储受限，本次进度可能无法保存。');
+
 
 
 
