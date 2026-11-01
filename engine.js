@@ -1,4 +1,4 @@
-import {TROOPS,HEROES,SPELLS,STAGES} from './data.js';
+import {TROOPS,HEROES,SPELLS,STAGES} from './data.js?v=20261101c';
 export class Battle{
  constructor({stage=0,deck=[0,1,3,2,5,4],hero=0,levels=[],seed=19,onEnd=()=>{}}={}){this.stage=STAGES[stage];this.deck=deck;this.heroId=hero;this.levels=levels;this.seed=seed;this.onEnd=onEnd;this.units=[];this.unitLimit=15;this.fx=[];this.pending=[];this.time=0;this.stock=0;this.stockCD=0;this.hp=[2200,2200*this.stage.difficulty];this.maxHP=[...this.hp];this.resource=[70,70];this.mana=80;this.cds={};this.heroCD=0;this.revive=0;this.uid=0;this.kills=0;this.spawned=0;this.status='ready';this.ai=1.7;this.ambient=[];this.aim=null;this.speed=1;this.pause=false;this.lastNotice='选择阵容后，开始本次远征。';}
  random(){this.seed=(Math.imul(1664525,this.seed)+1013904223)>>>0;return this.seed/4294967296;}
@@ -28,3 +28,4 @@ export class Battle{
  for(const u of this.units.filter(u=>u.hp<=0)){if(u.index===8&&!u.hero){this.effect('explosion',u.pos,u.lane);this.units.filter(v=>v.hp>0&&v.side!==u.side&&Math.abs(v.pos-u.pos)<80).forEach(v=>this.damage(v,u.max*.36));}if(u.hero){this.revive=22;this.lastNotice='英雄倒下，22秒后复活。期间无法使用英雄技能。';}if(u.side){this.kills++;this.resource[0]=Math.min(180,this.resource[0]+4);}else this.resource[1]=Math.min(180,this.resource[1]+4);}
  this.units=this.units.filter(u=>u.hp>0);this.fx.forEach(f=>f.life-=dt);this.fx=this.fx.filter(f=>f.life>0);if(this.hp.some(h=>h<=0)||this.time>=360){const win=this.hp[1]<=0||(this.time>=360&&this.hp[0]/this.maxHP[0]>this.hp[1]/this.maxHP[1]);this.status=win?'won':'lost';this.aim=null;this.onEnd({win,time:this.time,kills:this.kills,stage:this.stage.id,reward:win?this.stage.reward:40});}}
 }
+
