@@ -1,4 +1,4 @@
-import {TROOPS,HEROES,SPELLS,STAGES} from './data.js?v=20261101d';
+import {TROOPS,HEROES,SPELLS,STAGES} from './data.js?v=20261101e';
 export class Battle{
  constructor({stage=0,deck=[0,1,3,2,5,4],hero=0,levels=[],seed=19,onEnd=()=>{}}={}){this.stage=STAGES[stage];this.deck=deck;this.heroId=hero;this.levels=levels;this.seed=seed;this.onEnd=onEnd;this.units=[];this.unitLimit=15;this.fx=[];this.pending=[];this.time=0;this.stock=0;this.stockCD=0;this.hp=[2200,2200*this.stage.difficulty];this.maxHP=[...this.hp];this.resource=[70,70];this.mana=80;this.cds={};this.heroCD=0;this.revive=0;this.uid=0;this.kills=0;this.spawned=0;this.status='ready';this.ai=1.7;this.ambient=[];this.aim=null;this.speed=1;this.pause=false;this.lastNotice='选择阵容后，开始本次远征。';}
  random(){this.seed=(Math.imul(1664525,this.seed)+1013904223)>>>0;return this.seed/4294967296;}

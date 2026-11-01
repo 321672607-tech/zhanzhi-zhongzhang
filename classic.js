@@ -21,3 +21,5 @@ document.querySelector('.city-map').innerHTML=`<button class="city-hit hit-arena
 const minimap=document.createElement('div');minimap.className='battle-minimap';minimap.setAttribute('aria-label','战场小地图');document.querySelector('.arena-surface').append(minimap);
 const count=document.createElement('span');count.id='fieldCount';count.title='我方在场佣兵数量';document.querySelector('.resource-strip>div').append(count);
 
+
+const back=document.createElement('button');back.className='battle-back';back.dataset.page='city';back.setAttribute('aria-label','返回主城');back.textContent='↶';document.querySelector('.arena-surface').append(back);

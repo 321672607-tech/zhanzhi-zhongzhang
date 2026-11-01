@@ -1,7 +1,7 @@
-import './classic.js?v=20261101d';
-import {TROOPS,HEROES,SPELLS,STAGES,SOURCES} from './data.js?v=20261101d';
-import {Battle} from './engine.js?v=20261101d';
-import {Renderer} from './render.js?v=20261101d';
+import './classic.js?v=20261101e';
+import {TROOPS,HEROES,SPELLS,STAGES,SOURCES} from './data.js?v=20261101e';
+import {Battle} from './engine.js?v=20261101e';
+import {Renderer} from './render.js?v=20261101e';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const key='zzzz-reborn-save-v1';
 const day=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
