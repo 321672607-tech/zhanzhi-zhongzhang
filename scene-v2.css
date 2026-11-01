@@ -33,3 +33,5 @@ body.classic #page-city .city-map button.city-hit:hover,
 body.classic #page-city .city-map button.city-hit:active,
 body.classic #page-city .city-map button.city-hit:focus{background:transparent!important;background-image:none!important;box-shadow:none!important;border:0!important;filter:none!important;transform:none!important}
 body.classic #page-city .city-hit::before,body.classic #page-city .city-hit::after{display:none!important}
+.spell-art{display:inline-block;width:54px;height:54px;flex-shrink:0;background-image:url('assets/spell-icons-v1.png');background-repeat:no-repeat;background-size:700% 220%;background-position:calc(var(--spell-icon)*100%/6) 50%;vertical-align:middle}
+.classic .spell-button>.spell-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.classic .spell-button>strong{visibility:hidden}.classic .spell-button>small{z-index:2;padding:0 3px;background:#16272388}.classic .book-spells .spell-art{display:block;margin:0 auto 6px}.classic .skill-item>.spell-art{float:left;margin:0 10px 8px 0}.classic .spell-button:disabled .spell-art{filter:brightness(.5)}
