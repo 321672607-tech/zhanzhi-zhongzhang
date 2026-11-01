@@ -4,7 +4,7 @@ const column=document.querySelector('.battle-column');
 const controls=document.createElement('div');controls.className='classic-console';
 controls.append(document.querySelector('.resource-strip'),document.querySelector('.order-row'),document.querySelector('#deployCards'));
 column.append(controls);
-document.querySelector('#arena').height=450;
+document.querySelector('#arena').height=510;
 document.querySelector('#page-expedition .page-heading h1').textContent='左右对攻 · 原作画面校正版';
 document.querySelector('.build-tag').textContent='实机截图校正版';
 document.querySelector('.commander .local-note').textContent='本机保存 · 单人对电脑';
